@@ -1,11 +1,14 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NuevaTransferenciaComponent } from './nueva-transferencia/nueva-transferencia.component';
 import { EstadoCuentaComponent } from './estado-cuenta/estado-cuenta.component';
 import { FormsModule } from '@angular/forms';
+import localeEs from "@angular/common/locales/es-BO"
+import { registerLocaleData } from '@angular/common';
 
+registerLocaleData(localeEs, "es")
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +19,9 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: "es"}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
