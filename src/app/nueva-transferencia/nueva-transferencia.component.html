@@ -1,1 +1,31 @@
-<p>nueva-transferencia works!</p>
+<section class="container">
+  <form class="formulario" (ngSubmit)="transferir()">
+    <h2 class="formulario__titulo">nueva transferencia</h2>
+    <div class="form-field">
+      <label class="form-field__label" for="valor">Valor</label>
+      <!-- corchete y parentesis es para binding bidireccional -->
+      <input
+        type="text"
+        class="form-field__input"
+        placeholder="Valor de transferencia"
+        id="valor"
+        [(ngModel)]="valor"
+        name="valor"
+        />
+    </div>
+    <div class="form-field">
+      <label class="form-field__label" for="destino">Destino</label>
+      <input
+        type="text"
+        class="form-field__input"
+        placeholder="Cuenta destino"
+        id="destino"
+        [(ngModel)]="destino"
+        name="destino"
+      />
+    </div>
+    <div class="boton-container">
+      <button class="boton" type="submit">Transferir</button>
+    </div>
+  </form>
+</section>
