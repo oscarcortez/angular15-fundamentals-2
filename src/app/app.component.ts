@@ -10,7 +10,9 @@ export class AppComponent {
 
   transferencias: any[] = []
 
-  constructor(private service: TransferenciasServiceService){}
+  constructor(private service: TransferenciasServiceService){
+    this.transferencias = this.service.transferencias
+  }
 
   transferir($event: any){
     this.service.agregar($event)
