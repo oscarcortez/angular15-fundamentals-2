@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Transferencia } from '../models/transferencia.model';
 import { TransferenciasService } from '../services/transferencias.service';
 
@@ -9,7 +10,7 @@ import { TransferenciasService } from '../services/transferencias.service';
 })
 export class NuevaTransferenciaComponent {
 
-  constructor(private service: TransferenciasService){}
+  constructor(private service: TransferenciasService, private router: Router){}
 
   valor: string = ''
   destino: string = ''
@@ -21,7 +22,7 @@ transferir() {
     fecha: new Date()
   }
   this.service.agregar(datos).subscribe(
-    (respuesta) => console.log(respuesta),
+    (respuesta) => this.router.navigateByUrl("estado"),
     (err) => console.log(err)
   )
   this.limpiarCampos()
