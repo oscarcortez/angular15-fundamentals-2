@@ -6,7 +6,7 @@ import { Transferencia } from '../models/transferencia.model';
 @Injectable({
   providedIn: 'root'
 })
-export class TransferenciasServiceService {
+export class TransferenciasService {
   listaTransferencias: any[]
   url: string = 'http://localhost:3000/transferencias'
 
@@ -22,7 +22,7 @@ export class TransferenciasServiceService {
     return this.HttpClient.get<Transferencia[]>(this.url);
   }
 
-  agregar($event: any){
-    this.transferencias.push($event)
+  agregar(transferencia: Transferencia): Observable<Transferencia>{
+    return this.HttpClient.post<Transferencia>(this.url, transferencia);
   }
 }

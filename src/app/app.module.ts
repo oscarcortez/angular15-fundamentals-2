@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import localeEs from "@angular/common/locales/es-BO"
 import { registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing';
 
 registerLocaleData(localeEs, "es")
 @NgModule({
@@ -20,6 +21,7 @@ registerLocaleData(localeEs, "es")
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: "es"}
