@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TransferenciasServiceService } from './transferencias.service.service';
+import { TransferenciasServiceService } from './transferencias.service';
 
 describe('TransferenciasServiceService', () => {
   let service: TransferenciasServiceService;
