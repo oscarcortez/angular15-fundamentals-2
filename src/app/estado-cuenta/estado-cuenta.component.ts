@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { TransferenciasServiceService } from '../services/transferencias.service.service';
+import { Transferencia } from '../models/transferencia.model';
+import { TransferenciasServiceService } from '../services/transferencias.service';
 
 @Component({
   selector: 'app-estado-cuenta',
@@ -10,8 +11,11 @@ export class EstadoCuentaComponent {
 
   transferencias: any[] = []
 
-  constructor(private service: TransferenciasServiceService){
-    this.transferencias = this.service.transferencias
-  }
+  constructor(private service: TransferenciasServiceService){}
 
+  ngOnInit(): void{
+    this.service.todas().subscribe((resource: Transferencia[]) => {
+      this.transferencias = resource
+    })
+  }
 }
