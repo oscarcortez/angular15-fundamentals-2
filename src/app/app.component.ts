@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TransferenciasServiceService } from './services/transferencias.service.service';
+import { TransferenciasServiceService } from './services/transferencias.service';
 
 @Component({
   selector: 'app-root',
