@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TransferenciasServiceService } from './services/transferencias.service';
+import { TransferenciasService } from './services/transferencias.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ export class AppComponent {
 
   transferencias: any[] = []
 
-  constructor(private service: TransferenciasServiceService){
+  constructor(private service: TransferenciasService){
     this.transferencias = this.service.transferencias
   }
 
